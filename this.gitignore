@@ -1,0 +1,19 @@
+# Ignore node_modules directory (if using Node.js)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific temporary files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled stylesheets (if using a CSS preprocessor)
+*.css.map
+
+# Ignore build artifacts (if using a build tool)
+dist/
+build/
+
+# Ignore personal configuration files
+*.env

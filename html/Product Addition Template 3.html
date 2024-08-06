@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Description - 5WHY</title>
+    <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #6C757D;
+            --background-color: #F8F9FA;
+            --text-color: #333333;
+            --border-color: #DEE2E6;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .platform {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        .hint {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .tag-dropdown {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .selected-tags {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            margin: 2px;
+            border-radius: 3px;
+        }
+        
+        .tag .remove {
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5WHY Product/Service Description</h1>
+        
+        <!-- General Product Information -->
+        <div class="section">
+            <h2>Product Name</h2>
+            <input type="text" placeholder="Enter the product name">
+        </div>
+
+        <div class="section">
+            <h2>Description</h2>
+            <textarea placeholder="Enter a detailed description of the product, including its features and benefits"></textarea>
+        </div>
+
+        <div class="section">
+            <h2>Specifications</h2>
+            <textarea placeholder="Enter detailed specifications of the product"></textarea>
+        </div>
+
+        <div class="section">
+            <h2>Price</h2>
+            <input type="text" placeholder="Enter the price of the product">
+        </div>
+
+        <div class="section">
+            <h2>Images</h2>
+            <textarea placeholder="Enter image URLs or upload images of the product"></textarea>
+        </div>
+
+        <!-- Platform-Specific Information -->
+        <div class="section">
+            <h2>Platform-Specific Information</h2>
+
+            <!-- Shopify -->
+            <div class="platform">
+                <h3>Shopify</h3>
+                <label>Product Type</label>
+                <input type="text" placeholder="Enter product type">
+                <label>Vendor</label>
+                <input type="text" placeholder="Enter vendor name">
+                <label>Tags</label>
+                <div class="tag-dropdown">
+                    <select>
+                        <option value="tag1">Tag 1</option>
+                        <option value="tag2">Tag 2</option>
+                        <option value="tag3">Tag 3</option>
+                    </select>
+                </div>
+                <div class="selected-tags">
+                    <!-- Selected tags will be displayed here -->
+                </div>
+                <label>SKU</label>
+                <input type="text" placeholder="Enter SKU">
+            </div>
+
+            <!-- Etsy -->
+            <div class="platform">
+                <h3>Etsy</h3>
+                <label>Category</label>
+                <input type="text" placeholder="Enter category">
+                <label>Materials</label>
+                <input type="text" placeholder="Enter materials used">
+                <label>Production Time</label>
+                <input type="text" placeholder="Enter production time">
+                <label>Shipping</label>
+                <input type="text" placeholder="Enter shipping details">
+            </div>
+
+            <!-- TikTok -->
+            <div class="platform">
+                <h3>TikTok</h3>
+                <label>Video URL</label>
+                <input type="text" placeholder="Enter video URL">
+                <label>Hashtags</label>
+                <input type="text" placeholder="Enter relevant hashtags">
+                <label>Sound</label>
+                <input type="text" placeholder="Enter sound used">
+            </div>
+
+            <!-- Meta (Facebook/Instagram) -->
+            <div class="platform">
+                <h3>Meta (Facebook/Instagram)</h3>
+                <label>Caption</label>
+                <textarea placeholder="Enter caption for post"></textarea>
+                <label>Hashtags</label>
+                <input type="text" placeholder="Enter relevant hashtags">
+                <label>Target Audience</label>
+                <input type="text" placeholder="Enter target audience details">
+            </div>
+
+            <!-- Generic Requirements -->
+            <div class="platform">
+                <h3>Generic Requirements</h3>
+                <label>SEO Title</label>
+                <input type="text" placeholder="Enter SEO-friendly title">
+                <label>SEO Description</label>
+                <textarea placeholder="Enter SEO-friendly description"></textarea>
+                <label>Meta Tags</label>
+                <input type="text" placeholder="Enter meta tags">
+                <label>Alt Text for Images</label>
+                <textarea placeholder="Enter alt text for all images"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle tag selection
+        document.querySelectorAll('.tag-dropdown select').forEach(select => {
+            select.addEventListener('change', function() {
+                const selectedTag = this.options[this.selectedIndex].text;
+                const selectedTagsContainer = this.closest('.platform').querySelector('.selected-tags');
+                if (!selectedTagsContainer.innerHTML.includes(selectedTag)) {
+                    const tagElement = document.createElement('div');
+                    tagElement.className = 'tag';
+                    tagElement.innerHTML = `${selectedTag} <span class="remove">x</span>`;
+                    selectedTagsContainer.appendChild(tagElement);
+
+                    tagElement.querySelector('.remove').addEventListener('click', function() {
+                        this.parentElement.remove();
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

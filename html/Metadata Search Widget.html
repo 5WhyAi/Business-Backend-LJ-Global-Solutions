@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&J Global Solutions Document Search</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #473a8e;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #54d3c9;
+            margin: 0;
+        }
+        .search-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .search-box {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        #search-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #473a8e;
+            border-radius: 5px 0 0 5px;
+        }
+        #search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #473a8e;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        #search-button:hover {
+            background-color: #54d3c9;
+        }
+        .tag-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        .tag {
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tag:hover {
+            background-color: #54d3c9;
+            color: white;
+        }
+        #results {
+            margin-top: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>L&J Global Solutions Document Search</h1>
+    </header>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search for document type...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="tag-suggestions" id="tag-suggestions"></div>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        const documentTypes = [
+            'Policy', 'Procedure', 'Report', 'SOP', 'Contract', 'Proposal', 'Invoice', 'Template',
+            'Digital Asset', 'Marketing Material', 'Product Listing', 'Consultation Document',
+            'AI Model', 'User Guide'
+        ];
+
+        const tags = [
+            'Strategy', 'Finance', 'HR', 'IT', 'Marketing', 'Operations', 'Sales',
+            'Customer Service', 'Product Development', 'Legal', 'Compliance', 'Dropshipping',
+            'Digital Downloads', 'Consulting', 'AI Development', 'Personal Assistant', 'Family Services'
+        ];
+
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const tagSuggestions = document.getElementById('tag-suggestions');
+        const results = document.getElementById('results');
+
+        function showTagSuggestions() {
+            tagSuggestions.innerHTML = '';
+            tags.forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.classList.add('tag');
+                tagElement.textContent = tag;
+                tagElement.addEventListener('click', () => {
+                    searchInput.value += ' ' + tag;
+                });
+                tagSuggestions.appendChild(tagElement);
+            });
+        }
+
+        function search() {
+            const query = searchInput.value.toLowerCase();
+            const matchingDocuments = documentTypes.filter(doc => doc.toLowerCase().includes(query));
+            
+            results.innerHTML = '<h2>Search Results:</h2>';
+            if (matchingDocuments.length > 0) {
+                const ul = document.createElement('ul');
+                matchingDocuments.forEach(doc => {
+                    const li = document.createElement('li');
+                    li.textContent = doc;
+                    ul.appendChild(li);
+                });
+                results.appendChild(ul);
+            } else {
+                results.innerHTML += '<p>No matching documents found.</p>';
+            }
+        }
+
+        searchButton.addEventListener('click', search);
+        searchInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                search();
+            }
+        });
+
+        showTagSuggestions();
+    </script>
+</body>
+</html>

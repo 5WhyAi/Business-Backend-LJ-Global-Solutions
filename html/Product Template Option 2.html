@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Description - 5WHY</title>
+    <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #6C757D;
+            --background-color: #F8F9FA;
+            --text-color: #333333;
+            --border-color: #DEE2E6;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .platform {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        .hint {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .tag-dropdown {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .selected-tags {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            margin: 2px;
+            border-radius: 3px;
+        }
+        
+        .tag .remove {
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5WHY Product/Service Description</h1>
+        
+        <!-- General Product Information -->
+        <div class="section">
+            <h2>Product Name</h2>
+            <p>Enter the product name here.</p>
+        </div>
+
+        <div class="section">
+            <h2>Description</h2>
+            <p>Enter a detailed description of the product, including its features and benefits.</p>
+        </div>
+
+        <div class="section">
+            <h2>Specifications</h2>
+            <p>Enter detailed specifications of the product.</p>
+        </div>
+
+        <div class="section">
+            <h2>Price</h2>
+            <p>Enter the price of the product.</p>
+        </div>
+
+        <div class="section">
+            <h2>Images</h2>
+            <p>Enter image URLs or upload images of the product.</p>
+        </div>
+
+        <!-- Platform-Specific Information -->
+        <div class="section">
+            <h2>Platform-Specific Information</h2>
+
+            <!-- Shopify -->
+            <div class="platform">
+                <h3>Shopify</h3>
+                <p><strong>Product Type:</strong> Enter product type.</p>
+                <p><strong>Vendor:</strong> Enter vendor name.</p>
+                <p><strong>Tags:</strong> Enter product tags.</p>
+                <p><strong>SKU:</strong> Enter SKU.</p>
+            </div>
+
+            <!-- Etsy -->
+            <div class="platform">
+                <h3>Etsy</h3>
+                <p><strong>Category:</strong> Enter category.</p>
+                <p><strong>Materials:</strong> Enter materials used.</p>
+                <p><strong>Production Time:</strong> Enter production time.</p>
+                <p><strong>Shipping:</strong> Enter shipping details.</p>
+            </div>
+
+            <!-- TikTok -->
+            <div class="platform">
+                <h3>TikTok</h3>
+                <p><strong>Video URL:</strong> Enter video URL.</p>
+                <p><strong>Hashtags:</strong> Enter relevant hashtags.</p>
+                <p><strong>Sound:</strong> Enter sound used.</p>
+            </div>
+
+            <!-- Meta (Facebook/Instagram) -->
+            <div class="platform">
+                <h3>Meta (Facebook/Instagram)</h3>
+                <p><strong>Caption:</strong> Enter caption for post.</p>
+                <p><strong>Hashtags:</strong> Enter relevant hashtags.</p>
+                <p><strong>Target Audience:</strong> Enter target audience details.</p>
+            </div>
+
+            <!-- Generic Requirements -->
+            <div class="platform">
+                <h3>Generic Requirements</h3>
+                <p><strong>SEO Title:</strong> Enter SEO-friendly title.</p>
+                <p><strong>SEO Description:</strong> Enter SEO-friendly description.</p>
+                <p><strong>Meta Tags:</strong> Enter meta tags.</p>
+                <p><strong>Alt Text for Images:</strong> Enter alt text for all images.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

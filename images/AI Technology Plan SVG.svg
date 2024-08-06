@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#333" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" fill="#473a8e" text-anchor="middle" font-weight="bold">AI TECHNOLOGY PLAN</text>
+  
+  <!-- Core AI System -->
+  <circle cx="400" cy="200" r="80" fill="#473a8e" filter="url(#shadow)"/>
+  <text x="400" y="205" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">Core AI</text>
+  <text x="400" y="225" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">System</text>
+  
+  <!-- Company Assistant GPTs -->
+  <g transform="translate(200,350)">
+    <rect width="120" height="100" rx="10" ry="10" fill="#54d3c9" filter="url(#shadow)"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Product</text>
+    <text x="60" y="50" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Support Bot</text>
+    <path d="M30,70 Q60,90 90,70" stroke="#ffffff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(340,350)">
+    <rect width="120" height="100" rx="10" ry="10" fill="#54d3c9" filter="url(#shadow)"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Brand &amp;</text>
+    <text x="60" y="50" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Commercial</text>
+    <text x="60" y="70" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Executive</text>
+    <path d="M30,85 L90,85 M60,75 L60,95" stroke="#ffffff" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(480,350)">
+    <rect width="120" height="100" rx="10" ry="10" fill="#54d3c9" filter="url(#shadow)"/>
+    <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Product</text>
+    <text x="60" y="50" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Offering</text>
+    <text x="60" y="70" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">(e.g., 5WHY)</text>
+    <rect x="30" y="80" width="60" height="10" fill="#ffffff"/>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <line x1="400" y1="280" x2="260" y2="350" stroke="#473a8e" stroke-width="2"/>
+  <line x1="400" y1="280" x2="400" y2="350" stroke="#473a8e" stroke-width="2"/>
+  <line x1="400" y1="280" x2="540" y2="350" stroke="#473a8e" stroke-width="2"/>
+  
+  <!-- SharePoint Access -->
+  <g transform="translate(100,180)">
+    <rect width="140" height="80" rx="10" ry="10" fill="#4CAF50" filter="url(#shadow)"/>
+    <text x="70" y="35" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">L&amp;J Global</text>
+    <text x="70" y="55" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">SharePoint</text>
+  </g>
+  
+  <g transform="translate(560,180)">
+    <rect width="140" height="80" rx="10" ry="10" fill="#4CAF50" filter="url(#shadow)"/>
+    <text x="70" y="35" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">OpCo</text>
+    <text x="70" y="55" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">SharePoints</text>
+  </g>
+  
+  <!-- Connecting Lines for SharePoint -->
+  <line x1="240" y1="220" x2="320" y2="220" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="480" y1="220" x2="560" y2="220" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Legend -->
+  <rect x="20" y="520" width="15" height="15" fill="#473a8e"/>
+  <text x="45" y="532" font-family="Arial, sans-serif" font-size="12" fill="#333">Core AI System</text>
+  
+  <rect x="20" y="545" width="15" height="15" fill="#54d3c9"/>
+  <text x="45" y="557" font-family="Arial, sans-serif" font-size="12" fill="#333">Company Assistant GPTs</text>
+  
+  <rect x="20" y="570" width="15" height="15" fill="#4CAF50"/>
+  <text x="45" y="582" font-family="Arial, sans-serif" font-size="12" fill="#333">SharePoint Access</text>
+</svg>

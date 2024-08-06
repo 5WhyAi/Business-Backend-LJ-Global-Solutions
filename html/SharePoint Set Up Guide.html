@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharePoint Setup Guide for Multiple Businesses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #473a8e;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            color: #54d3c9;
+        }
+        h2 {
+            color: #473a8e;
+        }
+        h3 {
+            color: #2980b9;
+        }
+        .green-bullets {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .green-bullets li {
+            margin-bottom: 10px;
+        }
+        .green-bullets li::before {
+            content: "•";
+            color: #4CAF50;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.2em;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SharePoint Setup Guide for Multiple Businesses</h1>
+    </header>
+    
+    <h2>Step 1: Create a SharePoint Site for Each Business</h2>
+    <ul class="green-bullets">
+        <li><strong>Log in to Office 365 Admin Center</strong>: Go to <a href="https://admin.microsoft.com" target="_blank">admin.microsoft.com</a> and log in with your admin credentials.</li>
+        <li><strong>Navigate to SharePoint Admin Center</strong>: In the left sidebar, click on "Admin centers" and then "SharePoint".</li>
+        <li><strong>Create a New SharePoint Site</strong>: 
+            <ul class="green-bullets">
+                <li>Click on "Active sites" and then "Create".</li>
+                <li>Select "Team site" or "Communication site" based on your needs.</li>
+                <li>Configure the site details:
+                    <ul class="green-bullets">
+                        <li><strong>Site Name</strong>: Enter the name of the company.</li>
+                        <li><strong>Site Address</strong>: Auto-generated based on the site name.</li>
+                        <li><strong>Group Email Address</strong>: Auto-generated.</li>
+                        <li><strong>Site Description</strong>: Provide a brief description.</li>
+                        <li><strong>Privacy Settings</strong>: Choose "Private - Only members can access this site".</li>
+                    </ul>
+                </li>
+                <li>Add owners and members, then click "Finish".</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Step 2: Set Up Document Libraries and Folders</h2>
+    <ul class="green-bullets">
+        <li><strong>Access Each SharePoint Site</strong>: Navigate to each newly created SharePoint site.</li>
+        <li><strong>Create Document Libraries</strong>: 
+            <ul class="green-bullets">
+                <li>Click on "New" and select "Document library".</li>
+                <li>Name the library (e.g., Internal Processes, Product Information, Customer Support).</li>
+            </ul>
+        </li>
+        <li><strong>Create Folders within Libraries</strong>: 
+            <ul class="green-bullets">
+                <li>Inside each document library, create folders to further organize documents.</li>
+                <li><strong>Example Structure for Lucky Fig</strong>:
+                    <ul class="green-bullets">
+                        <li>Document Library: Internal Processes
+                            <ul class="green-bullets">
+                                <li>Folder: Supplier Information</li>
+                                <li>Folder: Product Listings</li>
+                            </ul>
+                        </li>
+                        <li>Document Library: Product Information
+                            <ul class="green-bullets">
+                                <li>Folder: Product Descriptions</li>
+                                <li>Folder: Images</li>
+                            </ul>
+                        </li>
+                        <li>Document Library: Customer Support
+                            <ul class="green-bullets">
+                                <li>Folder: FAQs</li>
+                                <li>Folder: Support Tickets</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Step 3: Integrate with Power Automate</h2>
+    <ul class="green-bullets">
+        <li><strong>Access Power Automate</strong>: Go to <a href="https://flow.microsoft.com" target="_blank">flow.microsoft.com</a>.</li>
+        <li><strong>Create Automated Flows</strong>: 
+            <ul class="green-bullets">
+                <li>Click on "Create" and choose "Automated flow".</li>
+                <li>Choose a trigger (e.g., "When a file is created in a folder").</li>
+            </ul>
+        </li>
+        <li><strong>Configure Actions</strong>: 
+            <ul class="green-bullets">
+                <li>Add actions to automate tasks such as moving files, sending notifications, or updating records.</li>
+                <li><strong>Example</strong>: When a new product listing is added to the Lucky Fig document library, send an email notification to the marketing team.</li>
+            </ul>
+        </li>
+        <li><strong>Save and Test Flows</strong>: Save the flow and test it to ensure it works as expected.</li>
+    </ul>
+
+    <h2>Step 4: Sharing Products Across Brands</h2>
+    <ul class="green-bullets">
+        <li><strong>Use SharePoint Links</strong>: 
+            <ul class="green-bullets">
+                <li>For products that you want to share across brands (e.g., a brand board template), store the document in one SharePoint site and share the link with other sites.</li>
+                <li>Set appropriate permissions to allow access.</li>
+            </ul>
+        </li>
+        <li><strong>Power Automate for Cross-Site Sharing</strong>: 
+            <ul class="green-bullets">
+                <li>Create a flow in Power Automate to copy or move files between SharePoint sites when they are added or updated.</li>
+                <li><strong>Example</strong>: When a new design asset is added to Lucky Fig Creations, copy it to the 5Why Global Strategies document library.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Step 5: Automating Dropshipping Tasks</h2>
+    <ul class="green-bullets">
+        <li><strong>Product Research and Supplier Management</strong>: 
+            <ul class="green-bullets">
+                <li>Use tools like Oberlo, Spocket, or AliExpress to find products and suppliers.</li>
+                <li>Integrate these tools with SharePoint using APIs or webhooks to automatically update supplier information and product listings.</li>
+            </ul>
+        </li>
+        <li><strong>Listing Optimization</strong>: 
+            <ul class="green-bullets">
+                <li>Use Power Automate to create flows that automatically update product listings with optimized descriptions, images, and tags.</li>
+                <li>Integrate with SEO tools to fetch and apply best practices for listing optimization.</li>
+            </ul>
+        </li>
+        <li><strong>Advertising Automation</strong>: 
+            <ul class="green-bullets">
+                <li>Use Power Automate to schedule and manage advertising campaigns.</li>
+                <li>Integrate with advertising platforms like Google Ads or Facebook Ads to automate ad creation, budgeting, and performance tracking.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Example Use Case: EnableYouAI</h2>
+    <ul class="green-bullets">
+        <li><strong>Create Document Libraries</strong>: 
+            <ul class="green-bullets">
+                <li>Personal Life
+                    <ul class="green-bullets">                            
+                        <li>Folder: Family Information</li>
+                        <li>Folder: Health Records</li>
+                    </ul>
+                </li>
+                <li>Career
+                    <ul class="green-bullets">
+                        <li>Folder: Resume and CV</li>
+                        <li>Folder: Job Applications</li>
+                    </ul>
+                </li>
+                <li>Education
+                    <ul class="green-bullets">
+                        <li>Folder: Certificates</li>
+                        <li>Folder: Courses</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Automate Workflows</strong>: 
+            <ul class="green-bullets">
+                <li>Use Power Automate to create flows that manage personal reminders, career updates, and educational achievements.</li>
+                <li><strong>Example</strong>: When a new health record is added, send a notification to the family doctor.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Step 6: Setting Up SharePoint for Software Tools (e.g., Cell Journey AI)</h2>
+    <ul class="green-bullets">
+        <li><strong>Create Document Libraries for Software Development</strong>: 
+            <ul class="green-bullets">
+                <li>Document Libraries:
+                    <ul class="green-bullets">
+                        <li>Code Repositories</li>
+                        <li>Documentation</li>
+                        <li>Project Management</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Integrate Development Tools</strong>: 
+            <ul class="green-bullets">
+                <li>Use APIs to integrate SharePoint with development tools like GitHub, Azure DevOps, or Jira.</li>
+                <li>Automate workflows for code updates, issue tracking, and documentation management.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Final Steps</h2>
+    <ul class="green-bullets">
+        <li><strong>Review and Test</strong>: 
+            <ul class="green-bullets">
+                <li>Review the setup for each SharePoint site and ensure all document libraries and folders are correctly organized.</li>
+                <li>Test Power Automate flows to ensure they are working as expected.</li>
+            </ul>
+        </li>
+        <li><strong>Training and Documentation</strong>: 
+            <ul class="green-bullets">
+                <li>Provide training to your team on how to use SharePoint and Power Automate.</li>
+                <li>Create documentation for the setup and workflows for future reference.</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

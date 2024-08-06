@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&J Global Product Description Template</title>
+    <style>
+        /* ... (previous styles remain the same) ... */
+        
+        .tag-dropdown {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .selected-tags {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            margin: 2px;
+            border-radius: 3px;
+        }
+        
+        .tag .remove {
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>L&J Global Product Description Template</h1>
+        
+        <form id="productForm">
+            <!-- ... (previous form sections remain the same) ... -->
+            
+            <!-- SEO and Generic Requirements -->
+            <div class="section">
+                <h2>SEO and Generic Requirements</h2>
+                <label for="seo-title">SEO Title:</label>
+                <input type="text" id="seo-title" name="seo-title">
+                <div class="hint">Keep it under 60 characters for optimal display in search results.</div>
+                
+                <label for="seo-description">SEO Description:</label>
+                <textarea id="seo-description" name="seo-description"></textarea>
+                <div class="hint">Aim for 150-160 characters to avoid truncation in search results.</div>
+                
+                <label>Meta Tags:</label>
+                <div class="tag-dropdowns">
+                    <div class="tag-dropdown">
+                        <select id="category-tags">
+                            <option value="">Select Category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Home & Garden">Home & Garden</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Beauty">Beauty</option>
+                            <option value="Sports & Outdoors">Sports & Outdoors</option>
+                        </select>
+                    </div>
+                    <div class="tag-dropdown">
+                        <select id="material-tags">
+                            <option value="">Select Material</option>
+                            <option value="Cotton">Cotton</option>
+                            <option value="Polyester">Polyester</option>
+                            <option value="Leather">Leather</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Wood">Wood</option>
+                        </select>
+                    </div>
+                    <div class="tag-dropdown">
+                        <select id="style-tags">
+                            <option value="">Select Style</option>
+                            <option value="Modern">Modern</option>
+                            <option value="Classic">Classic</option>
+                            <option value="Vintage">Vintage</option>
+                            <option value="Minimalist">Minimalist</option>
+                            <option value="Bohemian">Bohemian</option>
+                        </select>
+                    </div>
+                    <div class="tag-dropdown">
+                        <select id="feature-tags">
+                            <option value="">Select Feature</option>
+                            <option value="Waterproof">Waterproof</option>
+                            <option value="Wireless">Wireless</option>
+                            <option value="Eco-friendly">Eco-friendly</option>
+                            <option value="Handmade">Handmade</option>
+                            <option value="Adjustable">Adjustable</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="selected-tags" class="selected-tags"></div>
+                <input type="hidden" id="meta-tags" name="meta-tags">
+                
+                <label for="alt-text">Alt Text for Images:</label>
+                <textarea id="alt-text" name="alt-text"></textarea>
+                <div class="hint">Provide descriptive alt text for each image, separated by line breaks.</div>
+            </div>
+            
+            <button type="submit">Add Product</button>
+            <button type="button" id="exportBtn">Export All Products</button>
+        </form>
+
+        <div class="section">
+            <h2>Product List</h2>
+            <div id="productList"></div>
+        </div>
+
+        <div class="section">
+            <h2>Export Options</h2>
+            <button id="exportCsvBtn">Export as CSV</button>
+            <button id="exportFeedBtn">Generate Feed</button>
+        </div>
+
+        <!-- ... (previous "Coming Soon" section remains the same) ... -->
+    </div>
+
+    <script>
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        let selectedTags = [];
+
+        function updateSelectedTags() {
+            const selectedTagsElement = document.getElementById('selected-tags');
+            const metaTagsInput = document.getElementById('meta-tags');
+            selectedTagsElement.innerHTML = selectedTags.map(tag => 
+                `<span class="tag">${tag} <span class="remove" onclick="removeTag('${tag}')">&times;</span></span>`
+            ).join('');
+            metaTagsInput.value = selectedTags.join(',');
+        }
+
+        function addTag(tag) {
+            if (tag && !selectedTags.includes(tag)) {
+                selectedTags.push(tag);
+                updateSelectedTags();
+            }
+        }
+
+        function removeTag(tag) {
+            selectedTags = selectedTags.filter(t => t !== tag);
+            updateSelectedTags();
+        }
+
+        document.querySelectorAll('.tag-dropdown select').forEach(select => {
+            select.addEventListener('change', function() {
+                if (this.value) {
+                    addTag(this.value);
+                    this.value = '';
+                }
+            });
+        });
+
+        function saveProduct(product) {
+            products.push(product);
+            localStorage.setItem('products', JSON.stringify(products));
+            updateProductList();
+        }
+
+        function updateProductList() {
+            const listElement = document.getElementById('productList');
+            if (products.length === 0) {
+                listElement.innerHTML = '<p>No products added yet.</p>';
+                return;
+            }
+
+            let tableHTML = '<table><tr><th>Product Name</th><th>Price</th><th>Platforms</th><th>Selling Companies</th><th>Meta Tags</th><th>Actions</th></tr>';
+            products.forEach((product, index) => {
+                tableHTML += `<tr>
+                    <td>${product['product-name']}</td>
+                    <td>${product['product-price']}</td>
+                    <td>${product['listing-platforms']}</td>
+                    <td>${product['selling-companies']}</td>
+                    <td>${product['meta-tags']}</td>
+                    <td>
+                        <button onclick="editProduct(${index})">Edit</button>
+                        <button onclick="deleteProduct(${index})">Delete</button>
+                    </td>
+                </tr>`;
+            });
+            tableHTML += '</table>';
+            listElement.innerHTML = tableHTML;
+        }
+
+        function editProduct(index) {
+            const product = products[index];
+            for (let key in product) {
+                const element = document.getElementById(key);
+                if (element) element.value = product[key];
+            }
+            selectedTags = product['meta-tags'].split(',');
+            updateSelectedTags();
+            products.splice(index, 1);
+            updateProductList();
+        }
+
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            localStorage.setItem('products', JSON.stringify(products));
+            updateProductList();
+        }
+
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const product = Object.fromEntries(formData.entries());
+            saveProduct(product);
+            alert('Product added successfully!');
+            this.reset();
+            selectedTags = [];
+            updateSelectedTags();
+        });
+
+        document.getElementById('exportCsvBtn').addEventListener('click', function() {
+            if (products.length === 0) {
+                alert('No products to export.');
+                return;
+            }
+            const csvContent = productsToCSV(products);
+            downloadFile(csvContent, 'L&J_Global_Products.csv', 'text/csv;charset=utf-8;');
+        });
+
+        document.getElementById('exportFeedBtn').addEventListener('click', function() {
+            if (products.length === 0) {
+                alert('No products to generate feed.');
+                return;
+            }
+            const feedContent = generateFeed();
+            downloadFile(feedContent, 'L&J_Global_Product_Feed.xml', 'application/xml;charset=utf-8;');
+        });
+
+        function productsToCSV(products) {
+            if (products.length === 0) return '';
+            const headers = Object.keys(products[0]);
+            let csvContent = headers.join(',') + '\n';
+            products.forEach(product => {
+                let row = headers.map(header => {
+                    let cell = product[header] || '';
+                    cell = cell.replace(/"/g, '""');
+                    if (cell.includes(',') || cell.includes('\n') || cell.includes('"')) {
+                        cell = `"${cell}"`;
+                    }
+                    return cell;
+                });
+                csvContent += row.join(',') + '\n';
+            });
+            return csvContent;
+        }
+
+        function generateFeed() {
+            let feed = `<?xml version="1.0" encoding="UTF-8" ?>
+            <rss version="2.0">
+            <channel>
+                <title>L&J Global Product Feed</title>
+                <link>https://example.com/feed</link>
+                <description>Latest products from L&J Global</description>`;
+            
+            products.forEach(product => {
+                feed += `
+                <item>
+                    <title>${product['product-name']}</title>
+                    <description>${product['product-description']}</description>
+                    <price>${product['product-price']}</price>
+                    <platforms>${product['listing-platforms']}</platforms>
+                    <selling_companies>${product['selling-companies']}</selling_companies>
+                    <meta_tags>${product['meta-tags']}</meta_tags>
+                </item>`;
+            });
+            
+            feed += `
+            </channel>
+            </rss>`;
+            return feed;
+        }
+
+        function downloadFile(content, fileName, mimeType) {
+            const blob = new Blob([content], { type: mimeType });
+            const link = document.createElement("a");
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", fileName);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+        // Initialize the product list on page load
+        updateProductList();
+    </script>
+</body>
+</html>

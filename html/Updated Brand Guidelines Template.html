@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Guidelines Template</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #34495e;
+      --accent-color: #3498db;
+      --background-color: #f5f7fa;
+      --text-color: #333333;
+      --light-gray: #ecf0f1;
+      --white: #ffffff;
+      --tertiary-color: #e74c3c;
+      --quaternary-color: #27ae60;
+      --quinary-color: #f39c12;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      font-size: 12px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    
+    .logo-placeholder {
+      width: 120px;
+      height: 120px;
+      background-color: var(--white);
+      margin: 0 auto 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--primary-color);
+      border-radius: 50%;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+    }
+    
+    .tagline {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    
+    main {
+      margin-top: 1.5rem;
+    }
+    
+    section {
+      background-color: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.4rem;
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      margin: 1.2rem 0 0.75rem;
+    }
+    
+    p {
+      margin-bottom: 0.75rem;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding-left: 0.75rem;
+    }
+    
+    li {
+      margin-bottom: 0.4rem;
+    }
+    
+    .color-palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    
+    .color-swatch {
+      width: 80px;
+      text-align: center;
+    }
+    
+    .color-box {
+      height: 80px;
+      border-radius: 6px;
+      margin-bottom: 0.4rem;
+    }
+    
+    .typography-example {
+      margin-bottom: 1.2rem;
+    }
+    
+    .font-name {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    
+    .font-example {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    .highlight {
+      background-color: var(--light-gray);
+      border-left: 3px solid var(--accent-color);
+      padding: 0.75rem;
+      margin: 0.75rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder">LOGO</div>
+    <h1>[Company Name]</h1>
+    <p class="tagline">[Company Tagline]</p>
+  </header>
+  
+  <main class="container">
+    <section id="brand-overview">
+      <h2>Brand Overview</h2>
+      <p><strong>Mission:</strong> [Company mission statement]</p>
+      <p><strong>Vision:</strong> [Company vision statement]</p>
+      <p><strong>Values:</strong> [List of company values]</p>
+    </section>
+    
+    <section id="brand-voice">
+      <h2>Brand Voice</h2>
+      <p>[Description of brand voice and tone]</p>
+      <h3>Key Messages</h3>
+      <ul>
+        <li>[Key message 1]</li>
+        <li>[Key message 2]</li>
+        <li>[Key message 3]</li>
+      </ul>
+    </section>
+    
+    <section id="color-palette">
+      <h2>Color Palette</h2>
+      <div class="color-palette">
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--primary-color);"></div>
+          <p>Primary</p>
+          <p>#2c3e50</p>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--secondary-color);"></div>
+          <p>Secondary</p>
+          <p>#34495e</p>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--accent-color);"></div>
+          <p>Accent</p>
+          <p>#3498db</p>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--tertiary-color);"></div>
+          <p>Tertiary</p>
+          <p>#e74c3c</p>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--quaternary-color);"></div>
+          <p>Quaternary</p>
+          <p>#27ae60</p>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--quinary-color);"></div>
+          <p>Quinary</p>
+          <p>#f39c12</p>
+        </div>
+        <div class="color-swatch">
+          <div class="color-box" style="background-color: var(--background-color);"></div>
+          <p>Background</p>
+          <p>#f5f7fa</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="typography">
+      <h2>Typography</h2>
+      <div class="typography-example">
+        <p class="font-name">Primary Font: Inter</p>
+        <p class="font-example" style="font-weight: 300;">Light: The quick brown fox jumps over the lazy dog.</p>
+        <p class="font-example" style="font-weight: 400;">Regular: The quick brown fox jumps over the lazy dog.</p>
+        <p class="font-example" style="font-weight: 600;">Semi-Bold: The quick brown fox jumps over the lazy dog.</p>
+        <p class="font-example" style="font-weight: 700;">Bold: The quick brown fox jumps over the lazy dog.</p>
+      </div>
+    </section>
+    
+    <section id="logo-usage">
+      <h2>Logo Usage</h2>
+      <p>[Guidelines for logo usage, including clear space, minimum size, and approved variations]</p>
+    </section>
+    
+    <section id="imagery">
+      <h2>Imagery</h2>
+      <p>[Guidelines for selecting and using imagery that aligns with the brand]</p>
+    </section>
+    
+    <section id="applications">
+      <h2>Brand Applications</h2>
+      <h3>Business Cards</h3>
+      <p>[Guidelines for business card design]</p>
+      <h3>Website</h3>
+      <p>[Guidelines for website design and user interface]</p>
+      <h3>Social Media</h3>
+      <p>[Guidelines for social media presence and content]</p>
+    </section>
+  </main>
+</body>
+</html>

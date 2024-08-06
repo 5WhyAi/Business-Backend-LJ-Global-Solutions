@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&J Global Product Description Template</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #6C757D;
+            --background-color: #F8F9FA;
+            --text-color: #333333;
+            --border-color: #DEE2E6;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .platform {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        .hint {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>L&J Global Product Description Template</h1>
+        
+        <form id="productForm">
+            <!-- Listing Platforms -->
+            <div class="section">
+                <h2>Listing Platforms</h2>
+                <label for="listing-platforms">Select platforms for listing:</label>
+                <select id="listing-platforms" name="listing-platforms" multiple required>
+                    <option value="shopify">Shopify</option>
+                    <option value="etsy">Etsy</option>
+                    <option value="tiktok">TikTok</option>
+                    <option value="meta">Meta (Facebook/Instagram)</option>
+                    <option value="amazon">Amazon</option>
+                    <option value="ebay">eBay</option>
+                </select>
+                <div class="hint">Hold Ctrl (Windows) or Command (Mac) to select multiple platforms.</div>
+            </div>
+
+            <!-- General Product Information -->
+            <div class="section">
+                <h2>General Product Information</h2>
+                
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                
+                <label for="product-description">Description:</label>
+                <textarea id="product-description" name="product-description" required></textarea>
+                <div class="hint">Include key features, benefits, and unique selling points.</div>
+                
+                <label for="product-specs">Specifications:</label>
+                <textarea id="product-specs" name="product-specs"></textarea>
+                <div class="hint">List technical details, dimensions, materials, etc.</div>
+                
+                <label for="product-price">Price:</label>
+                <input type="text" id="product-price" name="product-price" required>
+                
+                <label for="product-images">Images:</label>
+                <input type="text" id="product-images" name="product-images">
+                <div class="hint">Enter image URLs or file paths. Multiple images can be separated by commas.</div>
+            </div>
+            
+            <!-- Platform-Specific Information -->
+            <div class="section">
+                <h2>Platform-Specific Information</h2>
+                
+                <!-- Shopify -->
+                <div class="platform">
+                    <h3>Shopify</h3>
+                    <label for="shopify-type">Product Type:</label>
+                    <input type="text" id="shopify-type" name="shopify-type">
+                    
+                    <label for="shopify-vendor">Vendor:</label>
+                    <input type="text" id="shopify-vendor" name="shopify-vendor">
+                    
+                    <label for="shopify-tags">Tags:</label>
+                    <input type="text" id="shopify-tags" name="shopify-tags">
+                    
+                    <label for="shopify-sku">SKU:</label>
+                    <input type="text" id="shopify-sku" name="shopify-sku">
+                </div>
+                
+                <!-- Etsy -->
+                <div class="platform">
+                    <h3>Etsy</h3>
+                    <label for="etsy-category">Category:</label>
+                    <input type="text" id="etsy-category" name="etsy-category">
+                    
+                    <label for="etsy-materials">Materials:</label>
+                    <input type="text" id="etsy-materials" name="etsy-materials">
+                    
+                    <label for="etsy-production-time">Production Time:</label>
+                    <input type="text" id="etsy-production-time" name="etsy-production-time">
+                    
+                    <label for="etsy-shipping">Shipping:</label>
+                    <textarea id="etsy-shipping" name="etsy-shipping"></textarea>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="platform">
+                    <h3>TikTok</h3>
+                    <label for="tiktok-video">Video URL:</label>
+                    <input type="text" id="tiktok-video" name="tiktok-video">
+                    
+                    <label for="tiktok-hashtags">Hashtags:</label>
+                    <input type="text" id="tiktok-hashtags" name="tiktok-hashtags">
+                    
+                    <label for="tiktok-sound">Sound:</label>
+                    <input type="text" id="tiktok-sound" name="tiktok-sound">
+                </div>
+                
+                <!-- Meta (Facebook/Instagram) -->
+                <div class="platform">
+                    <h3>Meta (Facebook/Instagram)</h3>
+                    <label for="meta-caption">Caption:</label>
+                    <textarea id="meta-caption" name="meta-caption"></textarea>
+                    
+                    <label for="meta-hashtags">Hashtags:</label>
+                    <input type="text" id="meta-hashtags" name="meta-hashtags">
+                    
+                    <label for="meta-audience">Target Audience:</label>
+                    <input type="text" id="meta-audience" name="meta-audience">
+                </div>
+            </div>
+            
+            <!-- SEO and Generic Requirements -->
+            <div class="section">
+                <h2>SEO and Generic Requirements</h2>
+                <label for="seo-title">SEO Title:</label>
+                <input type="text" id="seo-title" name="seo-title">
+                <div class="hint">Keep it under 60 characters for optimal display in search results.</div>
+                
+                <label for="seo-description">SEO Description:</label>
+                <textarea id="seo-description" name="seo-description"></textarea>
+                <div class="hint">Aim for 150-160 characters to avoid truncation in search results.</div>
+                
+                <label for="meta-tags">Meta Tags:</label>
+                <input type="text" id="meta-tags" name="meta-tags">
+                <div class="hint">Separate tags with commas. Include relevant keywords.</div>
+                
+                <label for="alt-text">Alt Text for Images:</label>
+                <textarea id="alt-text" name="alt-text"></textarea>
+                <div class="hint">Provide descriptive alt text for each image, separated by line breaks.</div>
+            </div>
+            
+            <button type="submit">Add Product</button>
+            <button type="button" id="exportBtn">Export All Products</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to save product to local storage
+        function saveProduct(product) {
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+            products.push(product);
+            localStorage.setItem('products', JSON.stringify(products));
+        }
+
+        // Function to get all products from local storage
+        function getAllProducts() {
+            return JSON.parse(localStorage.getItem('products')) || [];
+        }
+
+        // Function to convert products to CSV
+        function productsToCSV(products) {
+            if (products.length === 0) return '';
+            
+            const headers = Object.keys(products[0]);
+            let csvContent = headers.join(',') + '\n';
+
+            products.forEach(product => {
+                let row = headers.map(header => {
+                    let cell = product[header] || '';
+                    cell = cell.replace(/"/g, '""');
+                    if (cell.includes(',') || cell.includes('\n') || cell.includes('"')) {
+                        cell = `"${cell}"`;
+                    }
+                    return cell;
+                });
+                csvContent += row.join(',') + '\n';
+            });
+
+            return csvContent;
+        }
+
+        // Handle form submission
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const product = {};
+            for (let [key, value] of formData.entries()) {
+                product[key] = value;
+            }
+            
+            saveProduct(product);
+            alert('Product added successfully!');
+            this.reset();
+        });
+
+        // Handle export button click
+        document.getElementById('exportBtn').addEventListener('click', function() {
+            const products = getAllProducts();
+            if (products.length === 0) {
+                alert('No products to export.');
+                return;
+            }
+
+            const csvContent = productsToCSV(products);
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "L&J_Global_Products.csv");
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    </script>
+</body>
+</html>

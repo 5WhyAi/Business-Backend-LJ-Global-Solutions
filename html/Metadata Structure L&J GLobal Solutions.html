@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&J Global Solutions Metadata Structure</title>
+    <style>
+        :root {
+            --primary-color: #473a8e;
+            --secondary-color: #54d3c9;
+            --text-color: #333;
+            --background-color: #f0f4f8;
+            --card-background: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .section {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 2rem;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        .collapsible {
+            background-color: var(--secondary-color);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+        .active, .collapsible:hover {
+            background-color: #3fa69f;
+        }
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>L&J Global Solutions Metadata Structure</h1>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>1. Categories</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>L&J Global Solutions</li>
+                        <li>Lucky Fig</li>
+                        <li>Lucky Fig Creations</li>
+                        <li>Sarcast Mushroom</li>
+                        <li>5Why Global Strategies</li>
+                        <li>EnableYouAI</li>
+                        <li>Cell Journey AI</li>
+                        <li>Cell Journey</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Document Type</h3>
+                    <ul>
+                        <li>Policy</li>
+                        <li>Procedure</li>
+                        <li>Report</li>
+                        <li>SOP</li>
+                        <li>Contract</li>
+                        <li>Proposal</li>
+                        <li>Invoice</li>
+                        <li>Template</li>
+                        <li>Digital Asset</li>
+                        <li>Marketing Material</li>
+                        <li>Product Listing</li>
+                        <li>Consultation Document</li>
+                        <li>AI Model</li>
+                        <li>User Guide</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Department</h3>
+                    <ul>
+                        <li>Executive</li>
+                        <li>Finance</li>
+                        <li>Human Resources</li>
+                        <li>IT</li>
+                        <li>Marketing</li>
+                        <li>Operations</li>
+                        <li>Sales</li>
+                        <li>Customer Support</li>
+                        <li>Product Development</li>
+                        <li>Legal</li>
+                        <li>Design</li>
+                        <li>Consulting</li>
+                        <li>AI Development</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Tags</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Business Function</h3>
+                    <ul>
+                        <li>Strategy</li>
+                        <li>Finance</li>
+                        <li>HR</li>
+                        <li>IT</li>
+                        <li>Marketing</li>
+                        <li>Operations</li>
+                        <li>Sales</li>
+                        <li>Customer Service</li>
+                        <li>Product Development</li>
+                        <li>Legal</li>
+                        <li>Compliance</li>
+                        <li>Dropshipping</li>
+                        <li>Digital Downloads</li>
+                        <li>Consulting</li>
+                        <li>AI Development</li>
+                        <li>Personal Assistant</li>
+                        <li>Family Services</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Content Type</h3>
+                    <ul>
+                        <li>Internal</li>
+                        <li>External</li>
+                        <li>Confidential</li>
+                        <li>Public</li>
+                        <li>Adult</li>
+                        <li>Family-Friendly</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Status</h3>
+                    <ul>
+                        <li>Draft</li>
+                        <li>Under Review</li>
+                        <li>Approved</li>
+                        <li>Published</li>
+                        <li>Archived</li>
+                        <li>In Development</li>
+                        <li>Beta Testing</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Priority</h3>
+                    <ul>
+                        <li>Low</li>
+                        <li>Medium</li>
+                        <li>High</li>
+                        <li>Urgent</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. Keywords</h2>
+            <p>Keywords are specific to each company. Click on a company to see example keywords:</p>
+            <button class="collapsible">L&J Global Solutions</button>
+            <div class="content">
+                <ul>
+                    <li>HoldingCompany</li>
+                    <li>CorporateStrategy</li>
+                    <li>InvestmentPortfolio</li>
+                    <li>SubsidiaryManagement</li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Lucky Fig (Dropshipping)</button>
+            <div class="content">
+                <ul>
+                    <li>ProductListing</li>
+                    <li>SupplierAgreement</li>
+                    <li>InventoryManagement</li>
+                    <li>ShippingLogistics</li>
+                    <li>CustomerReviews</li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Lucky Fig Creations (Digital Downloads)</button>
+            <div class="content">
+                <ul>
+                    <li>DigitalArt</li>
+                    <li>GraphicDesignSet</li>
+                    <li>DownloadableContent</li>
+                    <li>CreativeAssets</li>
+                    <li>LicensingAgreement</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>4. Implementation Guidelines</h2>
+            <ul>
+                <li>Use consistent naming conventions across all metadata fields.</li>
+                <li>Implement dropdown menus for categories and tags to ensure consistency.</li>
+                <li>Allow multiple selections for tags and keywords.</li>
+                <li>Use auto-suggestion for keywords to maintain consistency and prevent duplication.</li>
+                <li>Regularly review and update the metadata structure to ensure it remains relevant and efficient.</li>
+                <li>Provide training to employees on how to properly use the metadata system.</li>
+                <li>Implement a governance policy to maintain the integrity of the metadata structure.</li>
+                <li>Create separate SharePoint sites for each company, with shared access to relevant content.</li>
+                <li>Implement strict access controls, especially for sensitive content.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>5. Search and Filter Functionality</h2>
+            <ul>
+                <li>Implement advanced search capabilities that allow users to search across all metadata fields.</li>
+                <li>Create filtered views based on common combinations of categories and tags.</li>
+                <li>Allow users to save custom searches for quick access to frequently needed information.</li>
+                <li>Implement faceted search to allow users to narrow down results using multiple metadata fields.</li>
+                <li>Create cross-company search functionality with appropriate access controls.</li>
+                <li>Develop AI-powered search recommendations based on user behavior and document relevance.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>6. Special Considerations for EnableYouAI</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Life Areas</h3>
+                    <ul>
+                        <li>Personal Development</li>
+                        <li>Career</li>
+                        <li>Family</li>
+                        <li>Health and Wellness</li>
+                        <li>Finance</li>
+                        <li>Education</li>
+                        <li>Relationships</li>
+                        <li>Hobbies and Interests</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>User Types</h3>
+                    <ul>
+                        <li>Individual</li>
+                        <li>Family</li>
+                        <li>Professional</li>
+                        <li>Student</li>
+                        <li>Retiree</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>AI Integration Level</h3>
+                    <ul>
+                        <li>Basic Assistance</li>
+                        <li>Advanced Integration</li>
+                        <li>Full AI Management</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Data Privacy Level</h3>
+                    <ul>
+                        <li>Public</li>
+                        <li>Personal</li>
+                        <li>Sensitive</li>
+                        <li>Highly Confidential</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
